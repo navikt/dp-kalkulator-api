@@ -44,7 +44,10 @@ class DagpengeKalkulator(
                 oppfyllerMinsteinntekt,
                 subsumsjon.satsResultat?.ukesats ?: throw IncompleteResultException("Missing satsResultat"),
                 periode,
-                subsumsjon.grunnlagResultat?.beregningsregel ?: throw IncompleteResultException("Missing beregningsregel")
+                subsumsjon.satsResultat?.
+                        beregningsregel ?: "ukjent beregningsregel",
+                subsumsjon.grunnlagResultat?.
+                        beregningsregel ?: "ukjent beregningsregel"
         )
     }
 }
@@ -55,5 +58,6 @@ data class KalkulasjonsResult(
     val oppfyllerMinsteinntekt: Boolean,
     val ukesats: Int,
     val periodeAntallUker: Int,
-    val regelBrukt: String
+    val satsRegelBrukt: String,
+    val grunnlagRegelBrukt: String
 )

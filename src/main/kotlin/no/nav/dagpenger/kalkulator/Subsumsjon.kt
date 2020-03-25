@@ -44,5 +44,6 @@ data class SatsResultat(
     val regelIdentifikator: String,
     val dagsats: Int,
     val ukesats: Int,
-    val benyttet90ProsentRegel: Boolean
+    val benyttet90ProsentRegel: Boolean,
+    val beregningsregel: String?
 )
